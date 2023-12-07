@@ -79,7 +79,7 @@
 </head>
 
 <body class="hold-transition login-page">
-    <div class="h-100 align-items-center">
+    <div style="height: 80vh;">
         <div class="login-logo">
             <a href="../../index2.html"><b>Login</b>PERPUSWEB</a>
         </div>
