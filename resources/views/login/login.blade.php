@@ -79,7 +79,7 @@
 </head>
 
 <body class="hold-transition login-page">
-    <div style="height: 80vh;">
+    <div style="width: 50vw" class="login-box">
         <div class="login-logo">
             <a href="../../index2.html"><b>Login</b>PERPUSWEB</a>
         </div>
@@ -90,11 +90,11 @@
                     <div class="col-6">
                         <div class="row justify-content-center">
                             <div class="col-4">
-                                <img src="https://placehold.co/100x100" />
+                                <img src="http://localhost:8000/logoperpus.jpeg" style="width: 100px"/>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <h2>SISTEM INFORMASI PERPUS</h2>
+                        <div class="text-center mt-3">
+                            <h2>SISTEM INFORMASI PERPUSWEB</h2>
                         </div>
                     </div>
                     <div class="col-6">
@@ -104,7 +104,7 @@
                         <div>
                             <form method="POST" action="">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group mt-4">
                                     <label for="email" class="text-md-right">{{ __('Username') }}</label>
                                     <div class="">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -131,6 +131,9 @@
                                         Login
                                     </button>
                                 </div>
+                                <p class="mt-3 text-center">
+                                    Belum punya akun? <a href="{{ ('register') }}">Register</a>
+                                </p>
                             </form>
                         </div>
                     </div>

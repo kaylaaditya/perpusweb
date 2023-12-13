@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login',function(){
-    return view('login.login');
-});
 
+
+Route::view('admin', 'dashboard')->name('dashboard');
+Route::view('login', 'login.login');
+Route::view('register', 'login.register');
