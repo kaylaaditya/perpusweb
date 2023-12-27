@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::view('admin', 'dashboard')->name('dashboard');
 Route::view('login', 'login.login');
 Route::view('register', 'login.register');
+Route::view('tabel1', 'layouts.tabel-data');
+Route::view('form1', 'layouts.form-tambah');

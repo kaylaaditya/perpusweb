@@ -22,13 +22,13 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="http://localhost:8000/admin" class="nav-link  active">
+                            <a href="http://localhost:8000/admin" class="nav-link {{ Request::is('admin*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="http://localhost:8000/admin/admin" class="nav-link ">
+                            <a href="http://localhost:8000/tabel1" class="nav-link {{ Request::is('tabel1*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-book-open"></i>
                                 <p>Pendataan Barang</p>
                             </a>
