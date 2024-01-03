@@ -90,7 +90,7 @@
                     <div class="col-6">
                         <div class="row justify-content-center">
                             <div class="col-4">
-                                <img src="http://localhost:8000/logoperpus.jpeg" style="width: 100px"/>
+                                <img src="http://localhost:8000/logoperpus.jpeg" style="width: 100px" />
                             </div>
                         </div>
                         <div class="text-center mt-2">
@@ -116,10 +116,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group mt-4">
-                                    <label for="email" class="text-md-right">{{ __('Email') }}</label>
+                                    <label for="email" class="text-md-right">{{ __('Nama Lengkap') }}</label>
                                     <div class="">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                        @error('email')
+                                        <input id="nama_lengkap" type="nama_lengkap" class="form-control @error('nama_lengkap') is-invalid @enderror" name="nama_lengkap" value="{{ old('nama_lengkap') }}" required autocomplete="nama_lengkap" autofocus>
+                                        @error('nama_lengkap')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-md-right">{{ __('Alamat') }}</label>
+                                    <div class="">
+                                        <input id="alamat" type="alamat" class="form-control @error('alamat') is-invalid @enderror" name="alamat" required autocomplete="current-alamat">
+                                        @error('alamat')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

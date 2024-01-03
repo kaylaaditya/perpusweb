@@ -56,11 +56,11 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Judul</th>
-                    <th>Penulis</th>
-                    <th>Penerbit</th>
-                    <th>Tahun terbit</th>
-                    <!-- <th>Deskripsi Kamar</th>  -->
+                    <th>Nama Peminjam</th>
+                    <th>Nama Buku</th>
+                    <th>Tgl pinjam</th>
+                    <th>Tgl Pengembalian</th>
+                    <th>Status Peminjam</th> 
                   </tr>
                 </thead>
               </table>

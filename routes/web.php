@@ -24,3 +24,6 @@ Route::view('login', 'login.login');
 Route::view('register', 'login.register');
 Route::view('tabel1', 'layouts.tabel-data');
 Route::view('form1', 'layouts.form-tambah');
+Route::view('tabel2', 'layouts.tabel-pinjam');
+Route::view('form2', 'layouts.form-pinjam');
+
