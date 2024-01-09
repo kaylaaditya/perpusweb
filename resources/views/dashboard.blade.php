@@ -7,28 +7,37 @@
 @section('content')
 <div class="content-wrapper">
     <div class="content-header">
-        <div class="container-fluid mb-2">
+        <!-- <div class="container-fluid mb-2">
             <h1 class="m-0">Dashboard</h1>
-        </div>
-
-
-
-        <div class="content">
-            <div class="container-fluid">
+        </div> -->
+    </div>
+    <div class="content">
+        <div class="row align-items-center justify-content-center" style="height: 60vh">
+            <div class="col-6 ">
                 <div class="card">
-                    <div class="card-header">
-                        <h5 class="m-0">Featured</h5>
-                    </div>
+                    <div class="card-header text-center">Selamat Datang di Aplikasi PERPUSWEB</div>
                     <div class="card-body">
-                        <h6 class="card-title">Special title treatment</h6>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="row">
+                            <div class="col">
+                                Detail Login
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Nama</div>
+                            <div class="col-7">Kella</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Username</div>
+                            <div class="col-7">kai</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Role</div>
+                            <div class="col-7">admin</div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 @endsection

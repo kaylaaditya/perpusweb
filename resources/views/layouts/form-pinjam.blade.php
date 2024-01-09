@@ -42,10 +42,6 @@
                                     <p class="mt-2">Tgl Pinjam</p>
                                     <input type="date" class="form-control">
                                 </div>
-                                <div class="col-md-6">
-                                    <p class="mt-2">Tgl Pengembalian</p>
-                                    <input type="date" class="form-control text-right">
-                                </div>
                             </div>
 
                             <div class="modal-footer justify-content-between">

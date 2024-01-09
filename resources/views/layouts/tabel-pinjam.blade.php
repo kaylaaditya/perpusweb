@@ -24,12 +24,12 @@
         <div class="container-fluid">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <h1 class="m-0">Data Buku</h1>
+              <h1 class="m-0">Data Pinjam</h1>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8 d-flex justify-content-start align-items-center">
-              <a href="{{ 'form1'}}" class="btn btn-primary btn-sm mt-2">
+              <a href="{{ 'form2'}}" class="btn btn-primary btn-sm mt-2">
                 <i class="fas fa-plus"></i> Tambah Data
               </a>
             </div>
@@ -60,7 +60,10 @@
                     <th>Nama Buku</th>
                     <th>Tgl pinjam</th>
                     <th>Tgl Pengembalian</th>
+                    <th>Rating</th>
+                    <th>Ulasan</th>
                     <th>Status Peminjam</th> 
+                    <th>Aksi</th>
                   </tr>
                 </thead>
               </table>

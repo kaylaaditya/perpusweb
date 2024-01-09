@@ -41,7 +41,7 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a href="http://localhost:8000/admin/kamar" class="nav-link ">
+                    <a href="http://localhost:8000/laporan" class="nav-link {{ Request::is('laporan*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-flag"></i>
                         <p>Generate Laporan</p>
                     </a>
