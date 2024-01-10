@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buku;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -11,10 +12,18 @@ class BukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return view('layouts.tabel-data');
     }
+
+    public function apiBuku()
+{
+    $buku = Buku::all();
+
+    return datatables()->of($buku)->toJson();
+    // return $buku()->toJson();
+}
 
     /**
      * Show the form for creating a new resource.

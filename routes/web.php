@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::view('admin', 'dashboard')->name('dashboard');
+Route::view('dashboard', 'dashboard')->name('dashboard');
 Route::view('login', 'login.login');
 Route::view('register', 'login.register');
 Route::view('tabel1', 'layouts.tabel-data');
@@ -33,3 +33,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('login', 'LoginController@login')->name('layouts.admin');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
+
+Route::get('/buku', 'BukuController@tabael-data');

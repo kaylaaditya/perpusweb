@@ -24,15 +24,15 @@
                         </div>
                         <div class="row">
                             <div class="col-4">Nama</div>
-                            <div class="col-7">Kella</div>
+                            <div class="col-7">{{ Auth::user()->nama_lengkap }}</div>
                         </div>
                         <div class="row">
                             <div class="col-4">Username</div>
-                            <div class="col-7">kai</div>
+                            <div class="col-7">{{ Auth::user()->username }}</div>
                         </div>
                         <div class="row">
                             <div class="col-4">Role</div>
-                            <div class="col-7">admin</div>
+                            <div class="col-7">{{ Auth::user()->user_type }}</div>
                         </div>
                     </div>
                 </div>

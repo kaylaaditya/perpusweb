@@ -16,11 +16,25 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'nama_lengkap'      => 'Pak Administrator',
+            'nama_lengkap'      => 'Administrator',
             'username'  => 'admin',
             'user_type'      => 'admin',
             'password' => bcrypt('123'),
             'email' => 'admin@perpus.web',
+        ]);
+        User::create([
+            'nama_lengkap'      => 'Petugas',
+            'username'  => 'petugas',
+            'user_type'      => 'petugas',
+            'password' => bcrypt('1234'),
+            'email' => 'admin1@perpus.web',
+        ]);
+        User::create([
+            'nama_lengkap'      => 'User',
+            'username'  => 'user',
+            'user_type'      => 'user',
+            'password' => bcrypt('12345'),
+            'email' => 'admin2@perpus.web',
         ]);
 
     }
