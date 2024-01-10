@@ -105,10 +105,10 @@
                             <form method="POST" action="">
                                 @csrf
                                 <div class="form-group mt-4">
-                                    <label for="email" class="text-md-right">{{ __('Username') }}</label>
+                                    <label for="username" class="text-md-right">{{ __('Username') }}</label>
                                     <div class="">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                        @error('email')
+                                        <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                        @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="mb-0">
                                     <button type="submit" class="btn btn-primary btn-block">
-                                        Login
+                                      <a href="{{ ('layouts.admin') }}"></a>Login
                                     </button>
                                 </div>
                                 <p class="mt-3 text-center">

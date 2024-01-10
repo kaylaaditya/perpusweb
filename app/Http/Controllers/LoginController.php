@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -90,15 +93,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'username'=>'required|exists:admins',
-            'password' =>'required'
+            'username' => 'required',
+            'password' => 'required'
         ]);
 
-        auth()->attempt($credentials);
-        {
+        if (auth()->attempt($credentials)) {
             // kalo sukses redirect ke home
             return redirect()->route('admin');
-            }
+        }
 
         // if (Auth::guard('admin')->attempt($credentials, $request->remember)){
         //    $request->session()->regenerate();

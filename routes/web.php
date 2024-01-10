@@ -28,3 +28,7 @@ Route::view('tabel2', 'layouts.tabel-pinjam');
 Route::view('form2', 'layouts.form-pinjam');
 Route::view('laporan', 'layouts.laporan');
 
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('login', 'LoginController@formLogin')->name('login.login');
+    Route::post('login', 'LoginController@login')->name('layouts.admin');
+});
