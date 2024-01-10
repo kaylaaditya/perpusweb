@@ -99,7 +99,7 @@ class LoginController extends Controller
 
         if (auth()->attempt($credentials)) {
             // kalo sukses redirect ke home
-            return redirect()->route('admin');
+            return redirect()->route('dashboard');
         }
 
         // if (Auth::guard('admin')->attempt($credentials, $request->remember)){
@@ -114,6 +114,6 @@ class LoginController extends Controller
     public function Logout()
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('login.login');
+        return redirect()->route('login');
     }
 }

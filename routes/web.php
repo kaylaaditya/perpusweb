@@ -31,4 +31,5 @@ Route::view('laporan', 'layouts.laporan');
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('login', 'LoginController@formLogin')->name('login.login');
     Route::post('login', 'LoginController@login')->name('layouts.admin');
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });

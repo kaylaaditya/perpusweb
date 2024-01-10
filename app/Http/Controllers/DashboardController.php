@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $search = $request->search;
         $data = auth()->user();
 
-        return view('admin.index', ['data' => $data]);
+        return view('dashboard', ['data' => $data]);
     }
 
     /**
