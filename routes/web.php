@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BukuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +31,9 @@ Route::view('laporan', 'layouts.laporan');
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('login', 'LoginController@formLogin')->name('login.login');
-    Route::post('login', 'LoginController@login')->name('layouts.admin');
+    Route::post('login', 'LoginController@login');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/tabel1', 'BukuController@index');
+    Route::get('/tambah-buku', [BukuController::class, 'create'])->name('form-tambah');
+    Route::post('/simpan-buku', [BukuController::class, 'store']);
 });
-
-Route::get('/buku', 'BukuController@tabael-data');

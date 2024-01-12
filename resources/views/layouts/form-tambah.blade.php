@@ -20,7 +20,7 @@
         @include('layouts.inc_admin.sidebar')
         
         <div class="content-wrapper">
-            <div class="content-header">
+            <div class="content-header">`
                 <div class="container-fluid mb-2">
                     <h1 class="m-0">Form Data</h1>
 
@@ -32,18 +32,18 @@
                     <div class="card">
                         <div class="card-body">
                             <p>Judul</p>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="judul" name="judul">
                             <p class="mt-2">Penulis</p>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="penulis" name="penulis" >
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <p class="mt-2">Penerbit</p>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="penerbit" name="penerbit">
                                 </div>
                                 <div class="col-md-6">
                                     <p class="mt-2">Tahun Terbit</p>
-                                    <input type="text" class="form-control text-right">
+                                    <input type="text" class="form-control text-right" id="tahun_terbit" name="tahun_terbit">
                                 </div>
                             </div>
 

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css?v=3.2.0">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -35,16 +35,16 @@
               </a>
             </div>
 
-            <div class="col-md-4">
-              <div class="input-group mt-3">
+            <!-- <div class="col-md-4"> -->
+              <!-- <div class="input-group mt-3">
                 <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
                   <button class="btn btn-primary">
                     <i class="fas fa-search fa-fw"></i>
                   </button>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -90,24 +90,39 @@
   <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
   <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 
   <script>
-        $(document).ready(function() {
-            $('#buku-table').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{!! route('api.buku') !!}",
-                columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'judul', name: 'judul' },
-                    { data: 'penulis', name: 'penulis' },
-                    { data: 'penerbit', name: 'penerbit' },
-                    { data: 'tahun_terbit', name: 'tahun_terbit' },
-                ]
-            });
-        });
-    </script>
+    $(document).ready(function() {
+      $('#buku-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{!! route('api.buku') !!}",
+        columns: [{
+            data: 'id',
+            name: 'id'
+          },
+          {
+            data: 'judul',
+            name: 'judul'
+          },
+          {
+            data: 'penulis',
+            name: 'penulis'
+          },
+          {
+            data: 'penerbit',
+            name: 'penerbit'
+          },
+          {
+            data: 'tahun_terbit',
+            name: 'tahun_terbit'
+          },
+        ]
+      });
+    });
+  </script>
 
 </body>
 

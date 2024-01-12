@@ -18,4 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
 Route::get('buku', 'BukuController@apiBuku')->name('api.buku');
+});

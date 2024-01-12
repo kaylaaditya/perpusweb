@@ -32,7 +32,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('form-tambah');
     }
 
     /**
@@ -43,7 +43,16 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required|numeric',
+        ]);
+
+        Buku::create($request->all());
+
+        return redirect()->route('layouts.tabel-data')->with('sukses', 'Buku berhasil ditambahkan.');
     }
 
     /**
