@@ -27,6 +27,7 @@
                 </div>
             </div>
 
+            <form action="" method="POST">
             <div class="content">
                 <div class="container-fluid">
                     <div class="card">
@@ -63,6 +64,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
 
 

@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * @return void
+     * @return void-44
      */
     public function run()
     {

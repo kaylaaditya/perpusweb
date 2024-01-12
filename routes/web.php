@@ -34,6 +34,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('login', 'LoginController@login');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/tabel1', 'BukuController@index');
-    Route::get('/tambah-buku', [BukuController::class, 'create'])->name('form-tambah');
-    Route::post('/simpan-buku', [BukuController::class, 'store']);
+    Route::get('/form1', [BukuController::class, 'create'])->name('layouts.form-tambah');
+    Route::post('/form1', [BukuController::class, 'store']);
 });
