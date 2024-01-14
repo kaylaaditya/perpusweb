@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css?v=3.2.0">
+  <link rel="stylesheet" href="adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -52,7 +53,7 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <table class="table table-hover table-striped">
+              <table class="table table-hover table-striped" id="peminjaman-table">
                 <thead>
                   <tr>
                     <th>No.</th>
@@ -92,6 +93,55 @@
   <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
   <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#peminjaman-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{!! route('api.buku') !!}",
+        columns: [{
+            data: 'id',
+            name: 'id'
+          },
+          {
+            data: 'no',
+            name: 'no'
+          },
+          {
+            data: 'nama_peminjam',
+            name: 'nama_peminjam'
+          },
+          {
+            data: 'nama_buku',
+            name: 'nama_buku'
+          },
+          {
+            data: 'tgl_pinjam',
+            name: 'tgl_pinjam'
+          },
+          {
+            data: 'tgl_pengembalian',
+            name: 'tgl_pengembalian'
+          },
+          {
+            data: 'rating',
+            name: 'rating'
+          },
+          {
+            data: 'ulasan',
+            name: 'ulasan'
+          },
+          {
+            data: 'status_peminjam',
+            name: 'status_peminjam'
+          },
+        ]
+      });
+    });
+  </script>
 
 </body>
 

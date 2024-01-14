@@ -32,7 +32,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        return view('form-tambah');
+        return view('layouts.form-tambah');
     }
 
     /**

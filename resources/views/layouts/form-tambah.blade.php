@@ -28,6 +28,7 @@
             </div>
 
             <form action="" method="POST">
+                @csrf
             <div class="content">
                 <div class="container-fluid">
                     <div class="card">
@@ -44,7 +45,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p class="mt-2">Tahun Terbit</p>
-                                    <input type="text" class="form-control text-right" id="tahun_terbit" name="tahun_terbit">
+                                    <input type="number" class="form-control text-right" id="tahun_terbit" name="tahun_terbit">
                                 </div>
                             </div>
 
