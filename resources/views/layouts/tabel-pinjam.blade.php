@@ -33,6 +33,7 @@
               <a href="{{ 'form2'}}" class="btn btn-primary btn-sm mt-2">
                 <i class="fas fa-plus"></i> Tambah Data
               </a>
+
             </div>
 
             <div class="col-md-4">
@@ -63,7 +64,7 @@
                     <th>Tgl Pengembalian</th>
                     <th>Rating</th>
                     <th>Ulasan</th>
-                    <th>Status Peminjam</th> 
+                    <th>Status Peminjam</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -101,14 +102,10 @@
       $('#peminjaman-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{!! route('api.buku') !!}",
+        ajax: "{!! route('api.pinjam') !!}",
         columns: [{
             data: 'id',
             name: 'id'
-          },
-          {
-            data: 'no',
-            name: 'no'
           },
           {
             data: 'nama_peminjam',
@@ -138,6 +135,11 @@
             data: 'status_peminjam',
             name: 'status_peminjam'
           },
+          {
+            // data: 'status_peminjam',
+            // name: 'status_peminjam'
+          },
+
         ]
       });
     });

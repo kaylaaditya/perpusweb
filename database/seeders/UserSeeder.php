@@ -30,9 +30,9 @@ class UserSeeder extends Seeder
             'email' => 'admin1@perpus.web',
         ]);
         User::create([
-            'nama_lengkap'      => 'User',
-            'username'  => 'user',
-            'user_type'      => 'user',
+            'nama_lengkap'      => 'Peminjam',
+            'username'  => 'peminjam',
+            'user_type'      => 'peminjam',
             'password' => bcrypt('12345'),
             'email' => 'admin2@perpus.web',
         ]);

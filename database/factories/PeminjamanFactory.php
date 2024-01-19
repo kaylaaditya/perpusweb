@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Buku;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,14 +19,16 @@ class PeminjamanFactory extends Factory
     public function definition()
     {
         return [
-            'no' => $this->faker->sentence,
+
+            'user_id' => User::factory(),
+            'buku_id' => Buku::factory(),
             'nama_peminjam' => $this->faker->name(),
             'nama_buku' => $this->faker->name(),
             'tgl_pinjam' => $this->faker->date(),
             'tgl_pengembalian' => $this->faker->date(),
-            'rating' => $this->faker->year,
-            'ulasan' => $this->faker->year,
-            'status_peminjam' => $this->faker->year,
+            'rating' => $this->faker->name(),
+            'ulasan' => $this->faker->name(),
+            'status_peminjam' => $this->faker->name(),
             
         ];
     }
