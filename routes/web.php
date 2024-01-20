@@ -35,6 +35,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/tabel1', 'BukuController@index')->name('layouts.tabel-data');
+    
     Route::get('/form1', [BukuController::class, 'create'])->name('layouts.form-tambah');
     Route::post('/form1', [BukuController::class, 'store']);
 

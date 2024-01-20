@@ -44,7 +44,6 @@
                     <th>Penerbit</th>
                     <th>Tahun terbit</th>
                     <th>Aksi</th>
-                    <!-- <th>Deskripsi Kamar</th>  -->
                   </tr>
                 </thead>
               </table>
@@ -54,7 +53,7 @@
       </div>
     </div>
 
-    
+
 
 
     <aside class="control-sidebar control-sidebar-dark">
@@ -72,56 +71,105 @@
     </footer>
   </div>
 
-  <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
-  <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
-  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
-  <script>
-    $(document).ready(function() {
-      $('#buku-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{!! route('api.buku') !!}",
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-7">
+              <div class="row">
+                <div class="col-4">Judul</div>
+                <div class="col-7 font-weight-bold" id="judulBuku">Judul Buku</div>
+              </div>
+              <div class="row">
+                <div class="col-4">Penerbit</div>
+                <div class="col-7 font-weight-bold" id="penerbitBuku">penerbit Buku</div>
+              </div>
+              <div class="row">
+                <div class="col-4">Tahun</div>
+                <div class="col-7 font-weight-bold" id="tahunTerbitBuku">2023</div>
+              </div>
+              <div class="row">
+                <div class="col-4">Penulis</div>
+                <div class="col-7 font-weight-bold" id="penulisBuku">penulis Buku</div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Pinjam</button>
+          </div>
+        </div>
+
+        <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
+        <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/adminlte/dist/js/adminlte.min.js?v=3.2.0"></script>
+        <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script>
+          $(document).ready(function() {
+            var t = $('#buku-table').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: "{!! route('api.buku') !!}",
 
 
 
-        columns: [{
-            data: 'id',
-            name: 'id'
-          },
-          {
-            data: 'judul',
-            name: 'judul'
-          },
-          {
-            data: 'penulis',
-            name: 'penulis'
-          },
-          {
-            data: 'penerbit',
-            name: 'penerbit'
-          },
-          {
-            data: 'tahun_terbit',
-            name: 'tahun_terbit'
-          },
-          {
-            // data: 'tahun_terbit',
-            // name: 'tahun_terbit'
-          },
-        ]
-        ,columnDefs: [{
-          targets: -1,
-          data: null,
-          defaultContent: "<button class='btn-primary'>Preview</button>",
-        }],
-      });
-    });
-  </script>
+              columns: [{
+                  data: 'id',
+                  name: 'id'
+                },
+                {
+                  data: 'judul',
+                  name: 'judul'
+                },
+                {
+                  data: 'penulis',
+                  name: 'penulis'
+                },
+                {
+                  data: 'penerbit',
+                  name: 'penerbit'
+                },
+                {
+                  data: 'tahun_terbit',
+                  name: 'tahun_terbit'
+                },
+                {
+                  // data: 'tahun_terbit',
+                  // name: 'tahun_terbit'
+                },
+              ],
+              columnDefs: [{
+                targets: -1,
+                data: null,
+                defaultContent: `<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Preview</button>`,
+              }],
+            });
+            $('#exampleModal').on('show.bs.modal', function(event) {
+              var button = $(event.relatedTarget);
+              var data = t.row(button.parents('tr')).data();
+              var modal = $(this);
+              modal.find('#judulBuku').text(data['judul']);
+              modal.find('#penerbitBuku').text(data['penerbit']);
+              modal.find('#tahunTerbitBuku').text(data['tahun_terbit']);
+              modal.find('#penulisBuku').text(data['penulis']);
+            })
+          });
+        </script>
 
-  </script>
+        </script>
 
 </body>
 
