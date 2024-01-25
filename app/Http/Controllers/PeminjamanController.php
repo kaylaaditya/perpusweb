@@ -32,7 +32,7 @@ class PeminjamanController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.tambah-pinjam');
     }
 
     /**
@@ -43,8 +43,18 @@ class PeminjamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_peminjam' => 'required',
+            'nama_buku' => 'required',
+            'tgl_pinjam' => 'required|date',
+        ]);
+
+        Peminjaman::create($request->all());
+
+        return redirect()->route('layouts.tabel-pinjam')
+            ->with('success', 'Peminjaman berhasil ditambahkan.');
     }
+
 
     /**
      * Display the specified resource.
